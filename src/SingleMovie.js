@@ -1,6 +1,8 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import useFetch from "./useFetch";
+const url =
+  "https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png";
 const SingleMovie = () => {
   const { id } = useParams();
   const { isLoading, error, data: movie } = useFetch(`&i=${id}`);
@@ -20,7 +22,7 @@ const SingleMovie = () => {
   const { Poster: poster, Title: title, Plot: plot, Year: year } = movie;
   return (
     <section className="single-movie">
-      <img src={poster} alt={title} />
+      <img src={poster === "N/A" ? url : poster} alt={title} />
       <div className="single-movie-info">
         <h2>{title}</h2>
         <p>{plot}</p>
