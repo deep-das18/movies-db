@@ -19,14 +19,61 @@ const SingleMovie = () => {
       </div>
     );
   }
-  const { Poster: poster, Title: title, Plot: plot, Year: year } = movie;
+  const {
+    Poster: poster,
+    Title: title,
+    Plot: plot,
+    Year: year,
+    Actors: actors,
+    Country: country,
+    Director: director,
+    Genre: genre,
+    Released: released,
+    Runtime: runtime,
+    Writer: writer,
+  } = movie;
   return (
     <section className="single-movie">
       <img src={poster === "N/A" ? url : poster} alt={title} />
       <div className="single-movie-info">
         <h2>{title}</h2>
-        <p>{plot}</p>
-        <h4>{year}</h4>
+        <p>
+          <span className="label">Director(s): </span>
+          {director}
+        </p>
+        <p>
+          {" "}
+          <span className="label">Plot:</span> Plot: {plot}
+        </p>
+        <p>
+          <span className="label">Actors: </span>
+          {actors}
+        </p>
+        <p>
+          <span className="label">Writer(s): </span>
+          {writer}
+        </p>
+        <p>
+          <span className="label">Genre: </span>
+          {genre}
+        </p>
+        <p>
+          <span className="label">Runtime: </span>
+          {runtime}
+        </p>
+        <p>
+          <span className="label">Release date: </span>
+          {released}
+        </p>
+        <p>
+          <span className="label">Country: </span>
+          {country}
+        </p>
+        <p>
+          {" "}
+          <span className="label">Year: </span>
+          {year}
+        </p>
         <Link className="btn" to="/">
           back to movies
         </Link>
