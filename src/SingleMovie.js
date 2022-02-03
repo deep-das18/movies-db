@@ -69,11 +69,6 @@ const SingleMovie = () => {
           <span className="label">Country: </span>
           {country}
         </p>
-        <p>
-          {" "}
-          <span className="label">Year: </span>
-          {year}
-        </p>
         <Link className="btn" to="/">
           back to movies
         </Link>
