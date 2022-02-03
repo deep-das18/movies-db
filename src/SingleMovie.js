@@ -31,6 +31,7 @@ const SingleMovie = () => {
     Released: released,
     Runtime: runtime,
     Writer: writer,
+    Awards: awards,
   } = movie;
   return (
     <section className="single-movie">
@@ -38,12 +39,12 @@ const SingleMovie = () => {
       <div className="single-movie-info">
         <h2>{title}</h2>
         <p>
-          <span className="label">Director(s): </span>
-          {director}
-        </p>
-        <p>
           {" "}
           <span className="label">Plot:</span> Plot: {plot}
+        </p>
+        <p>
+          <span className="label">Director(s): </span>
+          {director}
         </p>
         <p>
           <span className="label">Actors: </span>
@@ -53,6 +54,13 @@ const SingleMovie = () => {
           <span className="label">Writer(s): </span>
           {writer}
         </p>
+        {awards === "N/A" ? null : (
+          <p>
+            <span className="label">Awards: </span>
+            {awards}
+          </p>
+        )}
+
         <p>
           <span className="label">Genre: </span>
           {genre}
