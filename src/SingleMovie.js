@@ -56,7 +56,7 @@ const SingleMovie = () => {
           {writer}
         </p>
         <p>
-          <span className="label">Actors: </span>
+          <span className="label">Cast: </span>
           {actors}
         </p>
         {awards === "N/A" ? null : (
