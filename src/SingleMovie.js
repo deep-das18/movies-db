@@ -23,7 +23,6 @@ const SingleMovie = () => {
     Poster: poster,
     Title: title,
     Plot: plot,
-    Year: year,
     Actors: actors,
     Country: country,
     Director: director,
@@ -32,6 +31,8 @@ const SingleMovie = () => {
     Runtime: runtime,
     Writer: writer,
     Awards: awards,
+    Ratings: ratings,
+    BoxOffice: collection,
   } = movie;
   return (
     <section className="single-movie">
@@ -39,20 +40,24 @@ const SingleMovie = () => {
       <div className="single-movie-info">
         <h2>{title}</h2>
         <p>
+          <span className="label">Genre: </span>
+          {genre}
+        </p>
+        <p>
           {" "}
-          <span className="label">Plot:</span> Plot: {plot}
+          <span className="label">Plot:</span> {plot}
         </p>
         <p>
           <span className="label">Director(s): </span>
           {director}
         </p>
         <p>
-          <span className="label">Actors: </span>
-          {actors}
-        </p>
-        <p>
           <span className="label">Writer(s): </span>
           {writer}
+        </p>
+        <p>
+          <span className="label">Actors: </span>
+          {actors}
         </p>
         {awards === "N/A" ? null : (
           <p>
@@ -60,11 +65,20 @@ const SingleMovie = () => {
             {awards}
           </p>
         )}
-
-        <p>
-          <span className="label">Genre: </span>
-          {genre}
-        </p>
+        {ratings.length > 0 ? <p className="label">Rating(s):</p> : null}
+        {ratings.map((rating, index) => {
+          return (
+            <p key={index} className="rating">
+              <b>{rating.Source}:</b> {rating.Value}
+            </p>
+          );
+        })}
+        {collection === "N/A" ? null : (
+          <p>
+            <span className="label">Box office: </span>
+            {collection}
+          </p>
+        )}
         <p>
           <span className="label">Runtime: </span>
           {runtime}
