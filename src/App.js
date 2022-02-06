@@ -3,15 +3,18 @@ import { Switch, Route } from "react-router-dom";
 
 import Home from "./Home";
 import Movie from "./SingleMovie";
-
+import Header from "./Header";
 function App() {
   return (
-    <Switch>
-      <Route exact path="/">
-        <Home />
-      </Route>
-      <Route path="/movies/:id" children={<Movie />}></Route>
-    </Switch>
+    <>
+      <Header />
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/movies/:id" children={<Movie />}></Route>
+      </Switch>
+    </>
   );
 }
 

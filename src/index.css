@@ -142,7 +142,7 @@ Search
   width: 90vw;
   max-width: var(--max-width);
   margin: 0 auto;
-  margin-top: 5rem;
+  margin-top: 4rem;
   margin-bottom: 3rem;
 }
 .form-input {
@@ -288,4 +288,18 @@ Single Movie
     position: static;
     transform: translateY(-100%);
   }
+}
+.header {
+  width: 90vw;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 3rem;
+}
+.underline {
+  width: 8rem;
+  height: 0.25rem;
+  background: var(--clr-primary-5);
+  margin: 0 auto;
+  margin-top: 0.5rem;
 }
